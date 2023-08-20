@@ -1,0 +1,11 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  row-gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+.techs__cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(84px, 90px));
+  grid-template-rows: auto;
+  margin: 0;
+  padding: 0;
+  column-gap: 10px;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1279px) {
+  .techs__cards-list {
+    grid-template-columns: repeat(auto-fit, 84px);
+    padding-top: 90px;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .techs__cards-list {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .techs__cards-list {
+    max-width: 178px;
+    margin: auto;
+  }
+}

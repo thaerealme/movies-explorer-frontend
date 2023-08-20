@@ -1,0 +1,15 @@
+.movies__button {
+  display: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  border: none;
+  background-color: #313131;
+}
+
+@media screen and (max-width: 767px) {
+  .movies__button {
+    display: block;
+  }
+}

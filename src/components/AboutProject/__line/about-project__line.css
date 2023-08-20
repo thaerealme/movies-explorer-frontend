@@ -1,0 +1,12 @@
+.about-project__line {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .about-project__line {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,15 @@
+.sign-up {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  min-height: 88.7vh;
+}
+
+@media screen and (max-width: 767px) {
+  .sign-up {
+    padding: 56px 30px;
+  }
+}

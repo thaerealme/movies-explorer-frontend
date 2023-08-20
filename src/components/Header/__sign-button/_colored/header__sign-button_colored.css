@@ -1,0 +1,15 @@
+.header__sign-button_colored {
+  background-color: #3DDC84;
+  border: 1px solid #3DDC84;
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: #000;
+}
+
+@media screen and (max-width: 767px) {
+  .header__sign-button_colored {
+    border-radius: 3px;
+    padding: 5px 12px;
+  }
+}
+

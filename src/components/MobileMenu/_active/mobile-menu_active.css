@@ -1,0 +1,5 @@
+.mobile-menu_active {
+  visibility: visible;
+  transform: translateX(0px);
+  opacity: 1;
+}

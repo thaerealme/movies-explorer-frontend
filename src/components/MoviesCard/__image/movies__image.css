@@ -1,0 +1,5 @@
+.movies__image {
+  border-radius: 6px;
+  cursor: pointer;
+  max-width: 100%;
+}

@@ -1,0 +1,22 @@
+.search__input {
+  background-color: #2F2F2F;
+  border: none;
+  border-radius: 8px;
+  flex-grow: 1;
+  padding: 0;
+  height: 50px;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #fff;
+}
+
+.search__input:focus {
+  outline: 1px solid #2BE080;
+}
+
+@media screen and (max-width: 767px) {
+  .search__input {
+    height: 44px;
+  }
+}

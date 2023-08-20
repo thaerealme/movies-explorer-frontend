@@ -1,0 +1,19 @@
+.portfolio__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 125px;
+}
+
+@media screen and (max-width: 1279px) {
+  .portfolio__list {
+    padding-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio__list {
+    padding-bottom: 70px;
+  }
+}

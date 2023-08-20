@@ -1,0 +1,9 @@
+.about__info {
+  max-width: 600px;
+}
+
+@media screen and (max-width: 767px) {
+  .about__info {
+    order: 2;
+  }
+}

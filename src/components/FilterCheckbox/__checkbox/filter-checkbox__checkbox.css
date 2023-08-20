@@ -1,0 +1,22 @@
+.filter-checkbox__checkbox {
+  display: inline-block;
+  width: 34px;
+  height: 14px;
+  background-color: #343434;
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filter-checkbox__checkbox::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #A0A0A0;
+  border-radius: 50%;
+  top: 50%;
+  left: 8px;
+  transform: translate(-50%, -50%);
+}

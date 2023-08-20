@@ -1,0 +1,9 @@
+.about-project__milestone {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 36px 36px;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+  color: #fff;
+}

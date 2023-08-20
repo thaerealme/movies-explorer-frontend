@@ -1,0 +1,11 @@
+.movies__card {
+  background-color: transparent;
+}
+
+.movies__card:hover .movies__button_type_save {
+  display: block;
+}
+
+.movies__card:hover .movies__button_type_delete {
+  display: block;
+}

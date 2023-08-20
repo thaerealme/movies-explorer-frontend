@@ -1,0 +1,8 @@
+.tech-card {
+  background-color: #303030;
+  border-radius: 10px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

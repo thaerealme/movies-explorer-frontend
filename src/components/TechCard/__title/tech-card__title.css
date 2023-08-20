@@ -1,0 +1,12 @@
+.tech-card__title {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1279px) {
+  .tech-card__title {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,7 @@
+.movies__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  padding-top: 14px;
+}
