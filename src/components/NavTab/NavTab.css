@@ -15,5 +15,6 @@
 @media screen and (max-width: 767px) {
   .nav-tab {
     column-gap: 6px;
+
   }
 }

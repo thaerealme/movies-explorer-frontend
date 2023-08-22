@@ -1,15 +1,24 @@
 .sign-up__button {
   color: #fff;
   background-color: #4285F4;
-  margin-top: 70px;
+  justify-self: end;
   padding: 15px 0;
   border: 0;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 13px;
+  margin-top: auto;
+}
+
+@media screen and (max-width: 1279px) {
+  .sign-up__button {
+
+  }
 }
 
 @media screen and (max-width: 767px) {
  .sign-up__button {
-  margin-top: 160px;
+  margin-top: auto;
+  font-size: 12px;
  }
 }

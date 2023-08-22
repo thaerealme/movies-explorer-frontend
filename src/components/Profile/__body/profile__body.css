@@ -2,5 +2,5 @@
   max-width: 410px;
   color: #fff;
   font-size: 11px;
-  padding-bottom: 220px;
+  flex-grow: 1;
 }

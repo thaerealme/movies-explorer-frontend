@@ -9,18 +9,20 @@
   font-weight: 400;
   text-align: center;
   margin-top: auto;
+  justify-self: center;
 }
 
 @media screen and (max-width: 1279px) {
   .promo__title {
     font-size: 40px;
     padding-bottom: 0;
-    margin-top: auto;
   }
 }
 
 @media screen and (max-width: 767px) {
   .promo__title {
+    margin-top: 190px;
     font-size: 29px;
+    line-height: 1.27;
   }
 }

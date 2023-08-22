@@ -9,7 +9,7 @@ import './__image/about__image.css';
 
 import SectionTitle from '../SectionTitle/SectionTitle';
 import Portfolio from "../Portfolio/Portfolio";
-import avatar from '../../images/avatar.webp'
+import avatar from '../../images/avatar.jpg'
 import { Link } from 'react-router-dom';
 
 export default function AboutMe ({ refScroll }) {

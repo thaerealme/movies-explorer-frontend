@@ -1,3 +1,4 @@
+import Search from '../Search/Search';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import imageCard from '../../images/movies/1.jpg';
 import './SavedMovies.css';
@@ -25,6 +26,9 @@ const moviesList = [
 
 export default function SavedMovies () {
   return (
-    <MoviesCardList buttonType='delete' movies={ moviesList } />
+    <>
+      <Search />
+      <MoviesCardList buttonType='delete' movies={ moviesList } />
+    </>
   );
 }

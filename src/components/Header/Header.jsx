@@ -1,19 +1,18 @@
 import React from 'react';
 import './Header.css';
-import './__logo/header__logo.css';
 import './__status/header__status.css';
 import './__sign-button/header__sign-button.css';
 import './__sign-button/_colored/header__sign-button_colored.css';
 import './__button/header__button.css';
 import './__hamburger/header__hamburger.css';
-import logo from '../../images/logo.svg'
+import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import { Link } from 'react-router-dom';
 
 export default function Header({ loggedIn, handleHamburgerClick }) {
   return (
     <header className='header'>
-      <Link className='header__link' to='/' replace={ true }><img src={logo} alt="Лого шапка" className='header__logo' /></Link>
+      <Logo />
       { loggedIn ?
         (<>
           <Navigation/>

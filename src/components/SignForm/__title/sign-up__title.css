@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   padding-bottom: 40px;
+  padding-top: 40px;
   font-size: 24px;
   color: #fff;
   font-weight: 500;
@@ -10,5 +11,6 @@
 @media screen and (max-width: 767px) {
   .sign-up__title {
     padding-bottom: 80px;
+    padding-top: 50px;
   }
 }

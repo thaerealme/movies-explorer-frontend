@@ -29,24 +29,32 @@ function App() {
       <Routes>
         <Route path='/' element={ <>
           <Header />
-          <Main />
+          <main className='content'>
+            <Main />
+          </main>
           <Footer />
         </> }/>
         <Route path='/movies' element={<>
           <Header loggedIn={true} handleHamburgerClick={handleHamburgerClick} />
-          <Movies movies={movies} setMoves={setMovies}/>
+          <main className='content'>
+            <Movies movies={movies} setMoves={setMovies}/>
+          </main>
           <Footer />
           <MobileMenu navRef={navRef} handleHamburgerClick={handleHamburgerClick} />
         </>} />
         <Route path='/saved-movies' element={<>
           <Header loggedIn={true} handleHamburgerClick={handleHamburgerClick} />
-          <SavedMovies />
+          <main className='content'>
+            <SavedMovies />
+          </main>
           <Footer />
           <MobileMenu navRef={navRef} handleHamburgerClick={handleHamburgerClick} />
         </>} />
         <Route path='/profile' element={<>
           <Header loggedIn={true} handleHamburgerClick={handleHamburgerClick} />
-          <Profile />
+          <main className='content'>
+            <Profile />
+          </main>
           <MobileMenu navRef={navRef} handleHamburgerClick={handleHamburgerClick} />
         </>} />
         <Route path='/signup' element={ <Register title='Добро пожаловать!'/> } />

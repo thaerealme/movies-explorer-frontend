@@ -1,20 +1,25 @@
 .about__image {
   max-width: 270px;
-  max-height: 327px;
-  object-fit: fill;
+  min-height: 327px;
   border-radius: 10px;
+  align-self: stretch;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1279px) {
   .about__image {
     max-width: 255px;
+    min-height: 307px;
+    align-self: start;
   }
 }
 
 @media screen and (max-width: 767px) {
   .about__image {
+    align-self: center;
     order: 1;
     margin-bottom: 40px;
     max-width: 292px;
+    min-height: 352px;
   }
 }

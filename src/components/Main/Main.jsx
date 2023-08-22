@@ -20,7 +20,7 @@ export default function Main() {
   }
 
   return (
-    <main className="main">
+    <section className="main">
       <Promo
         handleTechsClick={handleTechsClick}
         handleAboutProjectClick={handleAboutProjectClick}
@@ -28,6 +28,6 @@ export default function Main() {
       <AboutProject refScroll={aboutProjectRef}/>
       <Techs refScroll={techsRef}/>
       <AboutMe refScroll={aboutMeRef}/>
-    </main>
+    </section>
   );
 }
