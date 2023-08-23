@@ -11,6 +11,7 @@
   .movies__grid {
     row-gap: 45px;
     padding-bottom: 0;
+    justify-items: center;
   }
 }
 
