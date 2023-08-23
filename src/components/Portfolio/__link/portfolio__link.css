@@ -1,0 +1,22 @@
+.portfolio__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 400;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio__link:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio__link {
+    font-size: 18px;
+  }
+}

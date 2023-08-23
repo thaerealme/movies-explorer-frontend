@@ -1,0 +1,16 @@
+.profile__button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__button {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

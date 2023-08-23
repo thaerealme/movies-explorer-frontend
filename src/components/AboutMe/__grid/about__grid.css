@@ -1,0 +1,23 @@
+.about__grid {
+  display: flex;
+  flex-direction: row;
+  max-width: 1140px;
+  margin: auto;
+  padding-top: 66px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1279px) {
+  .about__grid {
+    column-gap: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about__grid {
+    padding-top: 60px;
+    margin: 0;
+    flex-direction: column;
+  }
+}

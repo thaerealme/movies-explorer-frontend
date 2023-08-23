@@ -1,0 +1,6 @@
+.filter-checkbox__label {
+  display: flex;
+  column-gap: 12px;
+  color: #fff;
+  font-size: 12px;
+}

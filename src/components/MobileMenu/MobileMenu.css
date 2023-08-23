@@ -1,0 +1,31 @@
+.mobile-menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 520px;
+  max-height: 100vh;
+  background-color: #202020;
+  box-shadow: -300px 4px 3px 0px rgba(0, 0, 0, 0.3);
+  padding: 90px;
+  box-sizing: border-box;
+  transform: translateX(500px);
+  transition: all .3s;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+@media screen and (max-width: 767px) {
+  .mobile-menu {
+    left: 0;
+    width: auto;
+    padding: 10px;
+    padding-top: 84px;
+    padding-bottom: 46px;
+  }
+}

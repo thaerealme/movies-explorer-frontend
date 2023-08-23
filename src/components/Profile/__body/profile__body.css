@@ -1,0 +1,6 @@
+.profile__body {
+  max-width: 410px;
+  color: #fff;
+  font-size: 11px;
+  flex-grow: 1;
+}

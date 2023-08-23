@@ -1,0 +1,19 @@
+.about-project__container {
+  display: flex;
+  padding-top: 70px;
+  column-gap: 40px;
+}
+
+@media screen and (max-width: 1279px) {
+  .about-project__container {
+    column-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-project__container {
+    padding-top: 60px;
+    flex-direction: column;
+    row-gap: 55px;
+  }
+}

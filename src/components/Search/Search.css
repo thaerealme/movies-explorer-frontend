@@ -1,0 +1,20 @@
+.search {
+  max-width: 1140px;
+  margin: auto;
+  border-bottom: 1px solid #424242;
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 1279px) {
+  .search {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

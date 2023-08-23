@@ -1,0 +1,22 @@
+.about-project__roadmap {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 36px 36px;
+  padding: 110px 0;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1279px) {
+  .about-project__roadmap {
+    padding: 90px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-project__roadmap {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    grid-template-columns: 1fr 2fr;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,13 @@
+.footer__grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__grid {
+    flex-direction: column;
+  }
+}

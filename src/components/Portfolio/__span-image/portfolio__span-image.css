@@ -1,0 +1,9 @@
+.portfolio__span-image {
+
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio__span-image {
+    max-width: 12px;
+  }
+}

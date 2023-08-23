@@ -1,0 +1,11 @@
+.movies__button_type_saved {
+  display: block;
+  background-color: #EE3465;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  background-image: url('../../../../images/saved-icon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
