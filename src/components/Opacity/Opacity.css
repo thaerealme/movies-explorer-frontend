@@ -7,3 +7,7 @@ button:hover {
   opacity: 0.8;
   transition: all .5s;
 }
+
+button:disabled:hover {
+  opacity: unset;
+}
