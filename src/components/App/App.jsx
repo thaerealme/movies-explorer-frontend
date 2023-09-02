@@ -30,21 +30,21 @@ function App() {
   const rootRef = React.useRef();
 
   React.useEffect (() => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      api.getUserInfo()
-      .then((user) => {
-        setCurrentUser(user);
-        setLoggedIn(true);
+    api.getUserInfo()
+    .then((user) => {
+      setCurrentUser(user);
+    })
+    .catch(console.error)
+    api.getSavedMovies()
+      .then((movies) => {
+        setSavedMovies(movies);
       })
-      .catch(console.error)
-      api.getSavedMovies()
-        .then((movies) => {
-          setSavedMovies(movies);
-        })
-        .catch(err=>console.log(err))
-      navigate(location.pathname, { replace: true })
-    }
+      .catch(err=>console.log(err))
+      const jwt = localStorage.getItem('jwt');
+      if (jwt) {
+        setLoggedIn(true);
+        navigate(location.pathname, { replace: true })
+      }
   }, [])
 
   const handleHamburgerClick = () => {
@@ -78,15 +78,11 @@ function App() {
   }
   function handleLogin (data) {
     api.login(data)
-      .then((user) => {
-        localStorage.setItem('jwt', user.token)
+      .then((res) => {
+        localStorage.setItem('jwt', res.token);
         setLoggedIn(true)
         navigate('/movies', {replace: true});
-        api.getUserInfo()
-          .then((res) => {
-            setCurrentUser(res)
-          })
-          .catch(console.error);
+        window.location.reload();
       })
       .catch(err => {
         setSignError(`Что-то пошло не так. ${err}`)

@@ -48,7 +48,9 @@ class Api {
   createUser(data) {
     return fetch(`${this._baseUrl}/signup`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         email: data.email,
         name: data.name,
@@ -60,7 +62,9 @@ class Api {
   login(data) {
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         email: data.email,
         password: data.password,
@@ -91,7 +95,7 @@ class Api {
 const jwt = localStorage.getItem('jwt');
 
 export const api = new Api({
-  baseUrl: 'https://twentyfortythree.nomoreparties.co',
+  baseUrl: 'https://api.twentyfortythree.nomoreparties.co',
   headers: {
     Authorization: `Bearer ${jwt}`,
     'Content-Type': 'application/json'
