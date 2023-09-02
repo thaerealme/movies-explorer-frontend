@@ -23,6 +23,7 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
   const [signError, setSignError] = React.useState('');
+  const [updateSuccess, setUpdateSuccess] = React.useState('');
   const [loggedIn, setLoggedIn] = React.useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -99,6 +100,7 @@ function App() {
     api.updateUser(data)
       .then((user) => {
         setCurrentUser(user);
+        setUpdateSuccess('Данные профиля успешно обновлены!')
       })
       .catch((err) => {
         setSignError(`Что-то пошло не так. ${err}`)
@@ -137,7 +139,7 @@ function App() {
           <Route path='/profile' element={<>
             <Header loggedIn={loggedIn} handleHamburgerClick={handleHamburgerClick} />
             <main className='content'>
-              <ProtectedRouteElement element={Profile} loggedIn={loggedIn} onLogout={handleLogout} onEdit={handleEditProfile} signError={signError} />
+              <ProtectedRouteElement element={Profile} loggedIn={loggedIn} onLogout={handleLogout} onEdit={handleEditProfile} signError={signError} updateSuccess={updateSuccess} />
             </main>
             <MobileMenu navRef={navRef} handleHamburgerClick={handleHamburgerClick} />
           </>} />

@@ -2,41 +2,45 @@ import Search from '../Search/Search';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import './SavedMovies.css';
 import { useEffect, useState } from 'react';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export default function SavedMovies ({ movies, onMovieDislike }) {
   const [movieInput, setMovieInput] = useState('');
   const [moviesError, setMoviesError] = useState('');
   const [searchError, setSearchError] = useState('');
   const [filteredMovies, setFilteredMovies] = useState([]);
+  const [shortMovies, setShortMovies] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     setFilteredMovies(movies);
   }, [movies])
 
-  const handleCheckBox = () => {
+  useEffect(() => {
+
+  }, [filteredMovies, moviesError])
+
+  function handleCheckBox () {
     setIsChecked(!isChecked);
-    setMoviesError('');
-    if(!isChecked) {
-      const shortMovies = filteredMovies.filter((movie) => movie.duration <= 40);
-      if(shortMovies.length !== 0) {
-        setFilteredMovies(shortMovies);
-      } else {
-        setMoviesError('Ничего не найдено');
-      }
-    } else {
-      setFilteredMovies(movies);
-    }
+    setShortMovies(filteredMovies.filter((movie) => movie.duration <= 40))
   }
 
-  const handleSearchSubmit = (e) => {
+  function handleSearchSubmit (e) {
     e.preventDefault();
-    if (!movieInput || movieInput === ' ') {
-      setSearchError('Нужно ввести ключевое слово');
-      return;
+    if (!movieInput) return setSearchError('Нужно ввести ключевое слово');
+    const sortedMovies = movies.filter((movie) => movie.nameRU.toLowerCase().includes(movieInput.toLowerCase()) || movie.nameEN.toLowerCase().includes(movieInput.toLowerCase()));
+    if(sortedMovies.length !== 0) {
+      setMoviesError('');
+      setFilteredMovies(sortedMovies);
+    } else {
+      setFilteredMovies([]);
+      setMoviesError('Ничего не найдено');
     }
-    const sortedMovies = filteredMovies.filter((movie) => movie.nameRU.toLowerCase().includes(movieInput.toLowerCase()) || movie.nameEN.toLowerCase().includes(movieInput.toLowerCase()));
-    setFilteredMovies(sortedMovies);
+
+    if (isChecked) {
+      setFilteredMovies(filteredMovies.filter((movie) => movie.duration <= 40));
+    }
+
   }
 
   return (
@@ -49,7 +53,8 @@ export default function SavedMovies ({ movies, onMovieDislike }) {
         setSearchError={setSearchError}
         onSubmit={handleSearchSubmit}
       />
-      <MoviesCardList buttonType='delete' movies = {filteredMovies} onMovieDislike={onMovieDislike} />
+      <MoviesCardList buttonType='delete' movies = {isChecked ? shortMovies : filteredMovies} onMovieDislike={onMovieDislike}  />
+      { moviesError && <ErrorMessage message={moviesError} /> }
     </>
   );
 }

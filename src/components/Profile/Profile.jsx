@@ -8,15 +8,18 @@ import './__footer/profile__footer.css';
 import './__button/profile__button.css';
 import './__button/_colored/profile__button_colored.css';
 import './__input/profile__input.css';
+import './__success/profile__success.css';
+
 import { useContext, useState, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-export default function Profile ({ onLogout, onEdit, signError }) {
+export default function Profile ({ onLogout, onEdit, signError, updateSuccess }) {
   const currentUser = useContext(CurrentUserContext);
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState('');
+  const [formError, setFormError] = useState('');
   const [editForm, setEditForm] = useState(false);
   const [isValidForm, setIsValidForm] = useState(false);
 
@@ -28,7 +31,8 @@ export default function Profile ({ onLogout, onEdit, signError }) {
   function handleName (e) {
     if(isValidName(e.target.value)) {
       setNameError('Поле может содержать: Кириллица, латиница, пробелы и дефисы');
-    } else {
+    }
+    else {
       setNameError('');
     }
     setName(e.target.value);
@@ -40,7 +44,8 @@ export default function Profile ({ onLogout, onEdit, signError }) {
   function handleEmail (e) {
     if (!isValidEmail(e.target.value)) {
       setEmailError(e.target.validationMessage || 'Некорректно введён Email. Пример: mail@yandex.ru');
-    } else {
+    }
+    else {
       setEmailError('');
     }
     setEmail(e.target.value);
@@ -50,19 +55,23 @@ export default function Profile ({ onLogout, onEdit, signError }) {
   }
 
   useEffect(() => {
-    if(emailError || nameError || !email|| !name) {
+    if(name === currentUser.name && email === currentUser.email) {
+      setFormError('Новые данные должны отличаться от текущих')
+    } else {
+      setFormError('');
+    }
+    if(formError || emailError || nameError || !email|| !name) {
       setIsValidForm(false);
     } else {
       setIsValidForm(true);
     }
-  }, [name, nameError, email, emailError])
+  }, [name, nameError, email, emailError, formError])
 
   function handleEditClick () {
     setEditForm(true);
   }
   function handleSave () {
     onEdit({ name, email })
-    console.log(name,email)
   }
 
   return (
@@ -86,9 +95,11 @@ export default function Profile ({ onLogout, onEdit, signError }) {
       </div>
       <div className="profile__footer">
         {editForm ? (<>
-          {signError && <span className="sign-up__error">{signError}</span>}
-          {emailError && <span className="sign-up__error">{emailError}</span>}
-          {nameError && <span className="sign-up__error">{nameError}</span>}
+          { updateSuccess && <span className="profile__success">{ updateSuccess }</span> }
+          { signError && <span className="sign-up__error">{ signError }</span> }
+          { emailError && <span className="sign-up__error">{ emailError }</span> }
+          { nameError && <span className="sign-up__error">{ nameError }</span> }
+          { formError && <span className="sign-up__error">{ formError }</span> }
           <button className="sign-up__button" onClick={handleSave} disabled={isValidForm ? false : true}>Сохранить</button>
         </>)
           : (<>

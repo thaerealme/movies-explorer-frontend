@@ -6,7 +6,7 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { moviesApi } from '../../utils/MoviesApi';
 import ('./Movies.css');
 
-export default function Movies ({ movies, setMovies, setIsLoading, onMovieLike, onMovieDislike, savedMovies, shortMovies, setShortMovies, loggedIn }) {
+export default function Movies ({ movies, setMovies, setIsLoading, onMovieLike, onMovieDislike, savedMovies, shortMovies, setShortMovies }) {
   const [movieInput, setMovieInput] = useState('');
   const [moviesError, setMoviesError] = useState('');
   const [searchError, setSearchError] = useState('');
@@ -17,15 +17,17 @@ export default function Movies ({ movies, setMovies, setIsLoading, onMovieLike, 
   const shortSlice = shortMovies.slice(0, counter);
 
   useEffect(() => {
-    const searchHistory = JSON.parse(localStorage.getItem('search')) || false;
 
+    const searchHistory = JSON.parse(localStorage.getItem('search')) || false;
     if(searchHistory) {
       setIsChecked(searchHistory.isChecked);
       setMovieInput(searchHistory.input);
       const moviesList = searchHistory.movies;
       moviesList.forEach((movie) => {
         savedMovies.forEach((savedMovie) => {
-          if(savedMovie.movieId === movie.id) movie.isOwner = true;
+          if(savedMovie.movieId === movie.id) {
+            movie.isOwner = true;
+          }
         })
       })
       setMovies(moviesList);
@@ -36,9 +38,9 @@ export default function Movies ({ movies, setMovies, setIsLoading, onMovieLike, 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
 
-    if(screenWidth > 1279) {
+    if((screenWidth >= 1037 && screenWidth <= 1279) || screenWidth > 1280) {
       setCounter(12);
-    } else if (screenWidth > 767 && screenWidth < 1280) {
+    } else if (screenWidth >= 667 && screenWidth <= 1036) {
       setCounter(8)
     } else {
       setCounter(5)
@@ -54,7 +56,7 @@ export default function Movies ({ movies, setMovies, setIsLoading, onMovieLike, 
     return () => {
       window.removeEventListener('resize', handleScreenResize);
     }
-  }, [screenWidth])
+  }, [screenWidth, movies])
 
   function handleCheckBox () {
     setMoviesError('');
@@ -97,7 +99,7 @@ export default function Movies ({ movies, setMovies, setIsLoading, onMovieLike, 
   }
 
   const loadMore = () => {
-    if(screenWidth > 1279) {
+    if(screenWidth > 1036) {
       setCounter(counter + 3);
     } else {
       setCounter(counter + 2)
