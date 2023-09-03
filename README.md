@@ -15,3 +15,5 @@ https://github.com/thaerealme/movies-explorer-frontend/
 IP 51.250.110.113
 
 Frontend: https://twentyfortythree.nomoreparties.co/
+
+Ссылка на Pull Request: https://github.com/thaerealme/movies-explorer-frontend/pull/2

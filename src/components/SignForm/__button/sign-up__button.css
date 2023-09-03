@@ -10,6 +10,12 @@
   margin-top: auto;
 }
 
+.sign-up__button:disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+  cursor: auto;
+}
+
 @media screen and (max-width: 1279px) {
   .sign-up__button {
 
